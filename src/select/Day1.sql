@@ -6,7 +6,9 @@ select concat(first_name , ' ', last_name) as 이름,
 	gender as 성별, hire_date as 입사일 from employees order by hire_date asc;
     
 -- 문제3
-select count(*) as '각 직원수' from employees group by gender;
+select case gender when 'M' then '남'
+					when 'F' then '여' END as '성별'
+, count(*) as '각 직원수' from employees group by gender;
 
 
 -- 문제4
